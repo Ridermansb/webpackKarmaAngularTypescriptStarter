@@ -14,4 +14,5 @@ module.exports = {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', 'html'],
         modulesDirectories: ['node_modules']
     }
+
 };

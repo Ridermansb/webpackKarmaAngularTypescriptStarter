@@ -23,6 +23,9 @@ module.exports = function (config) {
         client: {
             mocha: { ui: 'bdd' }
         },
-        webpack: webpackConfig
+        webpack: webpackConfig,
+        webpackMiddleware: {
+            noInfo: true
+        }
     })
 };
