@@ -1,4 +1,4 @@
-import HomeController from "../../../components/home/homeController";
+import '../../../app'
 
 var $scope, $controller, $state;
 
