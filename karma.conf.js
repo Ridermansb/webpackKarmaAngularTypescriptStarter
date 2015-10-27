@@ -9,10 +9,12 @@ module.exports = function (config) {
         files: [
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
+            'app.js',
             'test/**/*-test.ts'
         ],
         exclude: [],
         preprocessors: {
+            'app.js': ['webpack', 'sourcemap'],
             'test/**/*.ts': ['webpack', 'sourcemap']
         },
         reporters: ['mocha'],

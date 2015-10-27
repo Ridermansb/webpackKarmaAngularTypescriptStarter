@@ -18,5 +18,4 @@ export default angular.module('app', ['ui.router'])
                 });
         }]
     )
-    .controller('HomeController', HomeController)
     .name;

@@ -1,4 +1,3 @@
-import '../../../app'
 import HomeController from "../../../components/home/homeController";
 
 var $scope, $controller, $state;
