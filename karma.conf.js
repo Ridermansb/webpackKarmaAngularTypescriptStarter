@@ -4,12 +4,16 @@ webpackConfig.stats = { colors: true, reasons: true };
 
 module.exports = function (config) {
     config.set({
-        basePath: '.',
+        basePath: '',
         frameworks: ['mocha', 'chai'],
-        files: [{ pattern: 'tests.webpack.js', watched: false }],
+        files: [
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
+            'test/**/*-test.ts'
+        ],
         exclude: [],
         preprocessors: {
-            'tests.webpack.js': ['webpack', 'sourcemap']
+            'test/**/*.ts': ['webpack', 'sourcemap']
         },
         reporters: ['mocha'],
         port: 9876,

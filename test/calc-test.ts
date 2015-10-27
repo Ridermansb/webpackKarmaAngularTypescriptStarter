@@ -1,4 +1,4 @@
-import Calc from "../app";
+import Calc from "../calc";
 
 describe('test', () => {
     it('should work', () => {

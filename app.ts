@@ -1,20 +1,22 @@
+import 'angular';
+import 'angular-ui-router';
+import HomeController from "./components/home/homeController";
 
-import {Sum} from "./sum";
-
-export default class Calc {
-
-    public Display : number;
-
-    constructor(display : number = 0) {
-        this.Display = display;
-    }
-
-    sum(num : number) : number {
-
-        var sum = new Sum();
-
-        this.Display += sum.result(num);
-        return this.Display;
-    }
-
-}
+export default angular.module('app', ['ui.router'])
+    .config(['$stateProvider', '$urlRouterProvider',
+        ($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) => {
+            $urlRouterProvider.otherwise('/');
+            $stateProvider
+                .state('home', {
+                    url: '/',
+                    controller: HomeController,
+                    controllerAs: 'vm',
+                    templateUrl: 'components/home/homeView.html',
+                    data: {
+                        requiresLogin: false
+                    }
+                });
+        }]
+    )
+    .controller('HomeController', HomeController)
+    .name;

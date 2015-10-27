@@ -78,9 +78,10 @@ node_modules
 
 # App
 *.map
-test/**/*.map
 /app.js
 /sum.js
+/components/**/*.js
+/calc.js
 test/**/*.js
 /typings
 /bundle.js
