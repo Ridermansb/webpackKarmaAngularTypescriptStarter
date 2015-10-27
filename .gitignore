@@ -77,7 +77,9 @@ build/Release
 node_modules
 
 # App
-/**/*.map
+*.map
+test/**/*.map
 /app.js
 test/**/*.js
 /typings
+/bundle.js

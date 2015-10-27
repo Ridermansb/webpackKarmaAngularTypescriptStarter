@@ -1,3 +1,7 @@
+var webpackConfig = require('./webpack.config');
+// webpackConfig.devtool = 'inline-source-map';
+webpackConfig.stats = { colors: true, reasons: true };
+
 module.exports = function (config) {
     config.set({
         basePath: '.',
@@ -5,9 +9,9 @@ module.exports = function (config) {
         files: ['test/**/*-test.ts'],
         exclude: [],
         preprocessors: {
-            'test/**/*.ts': 'typescript'
+            'test/**/*.ts': 'webpack'
         },
-        reporters: ['progress'],
+        reporters: ['mocha'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
@@ -19,13 +23,6 @@ module.exports = function (config) {
         client: {
             mocha: { ui: 'bdd' }
         },
-        typescriptPreprocessor: {
-            typings: [
-                'typings/tsd.d.ts'
-            ],
-            transformPath: function(path) {
-                return path.replace(/\.ts$/, '.js');
-            }
-        }
+        webpack: webpackConfig
     })
 };
