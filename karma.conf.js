@@ -6,10 +6,10 @@ module.exports = function (config) {
     config.set({
         basePath: '.',
         frameworks: ['mocha', 'chai'],
-        files: ['test/**/*-test.ts'],
+        files: [{ pattern: 'tests.webpack.js', watched: false }],
         exclude: [],
         preprocessors: {
-            'test/**/*.ts': ['webpack', 'sourcemap']
+            'tests.webpack.js': ['webpack', 'sourcemap']
         },
         reporters: ['mocha'],
         port: 9876,
