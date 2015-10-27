@@ -1,5 +1,5 @@
 var webpackConfig = require('./webpack.config');
-// webpackConfig.devtool = 'inline-source-map';
+webpackConfig.devtool = 'inline-source-map';
 webpackConfig.stats = { colors: true, reasons: true };
 
 module.exports = function (config) {
@@ -9,7 +9,7 @@ module.exports = function (config) {
         files: ['test/**/*-test.ts'],
         exclude: [],
         preprocessors: {
-            'test/**/*.ts': 'webpack'
+            'test/**/*.ts': ['webpack', 'sourcemap']
         },
         reporters: ['mocha'],
         port: 9876,
