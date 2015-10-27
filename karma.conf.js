@@ -5,7 +5,7 @@ module.exports = function (config) {
         files: ['test/**/*-test.ts'],
         exclude: [],
         preprocessors: {
-            '**/*.ts': ['typescript']
+            'test/**/*.ts': 'typescript'
         },
         reporters: ['progress'],
         port: 9876,
@@ -20,12 +20,9 @@ module.exports = function (config) {
             mocha: { ui: 'bdd' }
         },
         typescriptPreprocessor: {
-            options: {
-                sourceMap: false,
-                target: 'es5',
-                module: 'commonjs',
-                removeComments: true
-            },
+            typings: [
+                'typings/tsd.d.ts'
+            ],
             transformPath: function(path) {
                 return path.replace(/\.ts$/, '.js');
             }
