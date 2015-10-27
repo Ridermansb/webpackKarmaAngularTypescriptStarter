@@ -80,6 +80,7 @@ node_modules
 *.map
 test/**/*.map
 /app.js
+/sum.js
 test/**/*.js
 /typings
 /bundle.js

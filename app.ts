@@ -1,3 +1,6 @@
+
+import {Sum} from "./sum";
+
 export default class Calc {
 
     public Display : number;
@@ -7,7 +10,10 @@ export default class Calc {
     }
 
     sum(num : number) : number {
-        this.Display += num;
+
+        var sum = new Sum();
+
+        this.Display += sum.result(num);
         return this.Display;
     }
 
